@@ -73,6 +73,83 @@
         left: 125%;
       }
     }
+
+    .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.button::before {
+  pointer-events: none;
+}
+
+:root {
+  --tag-romance-bg: rgba(236, 72, 153, 0.2);
+  --tag-romance-text: #f9a8d4;
+
+  --tag-horror-bg: rgba(239, 68, 68, 0.2);
+  --tag-horror-text: #fca5a5;
+
+  --tag-psychological-bg: rgba(248, 113, 113, 0.2);
+  --tag-psychological-text: #fecaca;
+
+  --tag-funny-bg: rgba(234, 179, 8, 0.2);
+  --tag-funny-text: #fde047;
+
+  --tag-default-bg: rgba(255,255,255,0.1);
+  --tag-default-text: #e5e7eb;
+
+  --tag-femdom-bg: rgba(139, 92, 246, 0.2);
+  --tag-femdom-text: #c4b5fd;
+
+  --tag-bdsm-bg: rgba(0, 0, 0, 0.2);
+  --tag-bdsm-text: #cbd5e1;
+}
+
+
+.tag {
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.tag-romance {
+  background: var(--tag-romance-bg);
+  color: var(--tag-romance-text);
+}
+
+.tag-horror {
+  background: var(--tag-horror-bg);
+  color: var(--tag-horror-text);
+}
+
+.tag-psychological {
+  background: var(--tag-psychological-bg);
+  color: var(--tag-psychological-text);
+}
+
+.tag-funny {
+  background: var(--tag-funny-bg);
+  color: var(--tag-funny-text);
+}
+
+.tag-femdom {
+  background: var(--tag-femdom-bg);
+  color: var(--tag-femdom-text);
+}
+
+.tag-bdsm {
+  background: var(--tag-bdsm-bg);
+  color: var(--tag-bdsm-text);
+}
+
+
   </style>
 </head>
 
@@ -114,17 +191,192 @@
     </h1>
 
     <p class="delay-100 mx-auto mt-6 max-w-2xl animate-fade-up text-lg text-white/60">
-      Some of my favorite visual novels.
+      Some of my favorite <strong style="color: #b56ce3;">visual novels</strong>.
     </p>
   </section>
 
-  <!-- VN List -->
-  <main class="mx-auto max-w-6xl px-6 pb-20">
+<!-- VN List -->
+<div class="relative max-w-6xl mx-auto">
 
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+  <!-- LEFT ARROW -->
+  <button onclick="scrollCards(-1)"
+  class="absolute -left-12 top-1/2 z-50 -translate-y-1/2 rounded-full border border-white/10 bg-white/10 px-4 py-3 text-white backdrop-blur-xl transition hover:bg-white/20">
+  ❮
+</button>
 
-      <!-- Card -->
-      <div class="shine-card delay-100 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:bg-white/15">
+<button onclick="scrollCards(1)"
+  class="absolute -right-12 top-1/2 z-50 -translate-y-1/2 rounded-full border border-white/10 bg-white/10 px-4 py-3 text-white backdrop-blur-xl transition hover:bg-white/20">
+  ❯
+</button>
+
+  <!-- SCROLLER -->
+  <div id="cardScroller"
+    class="no-scrollbar flex gap-8 overflow-x-auto scroll-smooth px-2 py-6 snap-x snap-mandatory">
+
+    <!-- cards -->
+
+      <!-- Card 1 -->
+      <div class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+          <img src="https://img.itch.zone/aW1nLzE5MTkwMzUyLnBuZw==/315x250%23c/ieU2Mj.png"
+            alt="Fairwood Retreat 87"
+            class="h-72 w-full object-cover" />
+        </div>
+
+        <div class="mt-5">
+          <h2 class="text-2xl font-bold">Fairwood Retreat 87</h2>
+          <p class="mt-3 text-sm leading-relaxed text-white/60">
+            A adult visual novel with many hot/beautiful characters, set in 1987. Art gets better as the story goes on, story is fun and has a lot of heart put into it.
+          </p>
+
+          <div class="mt-5 flex gap-2">
+            <span class="tag tag-romance">Romance</span>
+            <span class="tag tag-horror">Horror</span>
+          </div>
+
+          <a href="https://sakurablossomgames.itch.io/fairwood-retreat-87" target="_blank"
+            class="mt-5 inline-block text-sm font-medium text-white transition hover:text-purple-200 hover:underline">
+            <i class="fa-brands fa-itch-io"></i> View on Itch.io
+          </a>
+        </div>
+
+        <div class="absolute bottom-4 right-4 rounded-full bg-yellow-400/20 px-3 py-1 text-xs font-semibold text-yellow-300 border border-yellow-400/20">
+  <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 8.5
+</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+          <img src="https://img.itch.zone/aW1hZ2UvMzI0OTkwMS8xOTQxNTc1Mi5wbmc=/original/%2FYnmHV.png"
+            alt="Heaven's Door"
+            class="h-72 w-full object-cover" />
+        </div>
+
+        <div class="mt-5">
+          <h2 class="text-2xl font-bold">Heaven's Door</h2>
+          <p class="mt-3 text-sm leading-relaxed text-white/60">
+            Beautiful visuals from the start, created by the same developers of Bare Witness. Story is fantastic with many sexy characters.
+          </p>
+
+          <div class="mt-5 flex gap-2">
+            <span class="tag tag-romance">Romance</span>
+            <span class="tag tag-funny">Funny</span>
+          </div>
+
+          <a href="https://alterworlds.itch.io/heavens-door" target="_blank"
+            class="mt-5 inline-block text-sm font-medium text-white transition hover:text-purple-200 hover:underline">
+            <i class="fa-brands fa-itch-io"></i> View on Itch.io
+          </a>
+        </div>
+
+        <div class="absolute bottom-4 right-4 rounded-full bg-yellow-400/20 px-3 py-1 text-xs font-semibold text-yellow-300 border border-yellow-400/20">
+    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 8
+</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+          <img src="https://img.gg.deals/c9/7a/96d9c3071291df40130f799cb7500bf8919b_912cr513.jpg"
+            alt="Summer's Gone"
+            class="h-72 w-full object-cover" />
+        </div>
+
+        <div class="mt-5">
+          <h2 class="text-2xl font-bold">Summer's Gone (S1/S2)</h2>
+          <p class="mt-3 text-sm leading-relaxed text-white/60">
+            Absolutely stunning visuals, music and story. In my top 10 of all time. A very emotional, relatable story, worth a play.
+          </p>
+
+          <div class="mt-5 flex gap-2">
+            <span class="tag tag-psychological">Psychological</span>
+            <span class="tag tag-romance">Romance</span>
+          </div>
+
+          <a href="https://store.steampowered.com/app/2240150/Summers_Gone__Season_1/" target="_blank"
+            class="mt-5 inline-block text-sm font-medium text-white transition hover:text-purple-200 hover:underline">
+            <i class="fa-brands fa-steam"></i> View on Steam
+          </a>
+        </div>
+
+        <div class="absolute bottom-4 right-4 rounded-full bg-yellow-400/20 px-3 py-1 text-xs font-semibold text-yellow-300 border border-yellow-400/20">
+    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 9
+</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+          <img src="https://img.itch.zone/aW1nLzI1MDUyMjQ5LmpwZw==/315x250%23c/02Pbyy.jpg"
+            alt="Karlsson's Gambit"
+            class="h-72 w-full object-cover" />
+        </div>
+
+        <div class="mt-5">
+          <h2 class="text-2xl font-bold">Karlsson's Gambit</h2>
+          <p class="mt-3 text-sm leading-relaxed text-white/60">
+            Amazing doesn't begin to describe this game. The art is mediocre at first, just like other visual novels, gets better later on. Femdom in this game is intense and perfectly well done.
+          </p>
+
+          <div class="mt-5 flex gap-2">
+            <span class="tag tag-femdom">Femdom</span>
+            <span class="tag tag-romance">Romance</span>
+            <span class="tag tag-bdsm">BDSM</span>
+          </div>
+
+          <a href="https://grymgudinnagames.itch.io/karlssons-gambit" target="_blank"
+            class="mt-5 inline-block text-sm font-medium text-white transition hover:text-purple-200 hover:underline">
+            <i class="fa-brands fa-itch-io"></i> View on Itch.io
+          </a>
+        </div>
+
+        <div class="absolute bottom-4 right-4 rounded-full bg-yellow-400/20 px-3 py-1 text-xs font-semibold text-yellow-300 border border-yellow-400/20">
+    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 9.5
+</div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="shine-card group min-w-[340px] max-w-[340px] snap-start rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] hover:bg-white/15">
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+          <img src="https://img.itch.zone/aW1nLzI3MDA2Nzg1LnBuZw==/315x250%23c/8rpQXL.png"
+            alt="Moving Down"
+            class="h-72 w-full object-cover" />
+        </div>
+
+        <div class="mt-5">
+          <h2 class="text-2xl font-bold">Moving Down</h2>
+          <p class="mt-3 text-sm leading-relaxed text-white/60">
+            A story of a man who slowly turns into a slave throughout the story, guided by his wife in a struggling marriage. Art isn't great at first, but gets better later on.
+          </p>
+
+          <div class="mt-5 flex gap-2">
+            <span class="tag tag-femdom">Femdom</span>
+            <span class="tag tag-romance">Romance</span>
+            <span class="tag tag-bdsm">BDSM</span>
+          </div>
+
+          <a href="https://mironyu.itch.io/moving-down" target="_blank"
+            class="mt-5 inline-block text-sm font-medium text-white transition hover:text-purple-200 hover:underline">
+            <i class="fa-brands fa-itch-io"></i> View on Itch.io
+          </a>
+        </div>
+
+        <div class="absolute bottom-4 right-4 rounded-full bg-yellow-400/20 px-3 py-1 text-xs font-semibold text-yellow-300 backdrop-blur-md border border-yellow-400/20">
+  <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i> 9.5
+</div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+  </div>
+
+</div>
+
+
+      <!--<div class="shine-card delay-100 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:bg-white/15">
 
         <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
           <img
@@ -142,7 +394,7 @@
           </p>
 
           <div class="mt-5 flex gap-2">
-            <span class="rounded-full bg-pink-500/20 px-3 py-1 text-xs text-pink-200">
+            <span class="tag tag-romance">
               Romance
             </span>
 
@@ -158,7 +410,9 @@
         </div>
       </div>
 
-      <!-- Card -->
+    
+
+      
       <div class="shine-card delay-200 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:bg-white/15">
 
         <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
@@ -194,7 +448,7 @@
         </div>
       </div>
 
-      <!-- Card -->
+      
       <div class="shine-card delay-300 animate-fade-up rounded-3xl border border-white/10 bg-white/10 p-5 shadow-2xl backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:bg-white/15">
 
         <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
@@ -232,11 +486,22 @@
     </div>
 
   </main>
-
+-->
   <!-- Footer -->
   <footer class="py-8 text-center text-white/40">
     © 2026 Lovebyte Games. All rights reserved.
   </footer>
+
+<script>
+  function scrollCards(direction) {
+    const container = document.getElementById("cardScroller");
+
+    container.scrollBy({
+      left: direction * 380,
+      behavior: "smooth"
+    });
+  }
+</script>
 
 </body>
 </html>
